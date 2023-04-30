@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <style type="text/css">
+        .navbar{
+            background:green;
+        }
+        .navbar-nav li{
+            padding: 0 10px;
+        }
+     </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a href="" class="navbar-brand">
+      <img src="flowtocodelogo.jfif" style="width:59px;" class="web-logo">
+
+      <!-- <img class="mob-logo" src="https://www.firstfiddle.in/assets/images/logo-for-mobile.png"> -->
+    </a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#pn">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="collapse navbar-collapse" id=pn>
+    <h1 style="color: white;">Flow To Code
+    </h1>
+    <ul class="navbar-nav ms-auto">
+      <li><a href="template.html" class="nav-link" style="font-size:25px;">Home</a></li>
+      <li><a href="main.html" class="nav-link" style="font-size:25px;">Drawing Practice</a></li>
+      
+ 
+      <!--model button end--->
+
+    </ul> 
+  </div><!--collapse end-->
+  </div><!--container-fluid-->
+</nav><!--nav end-->
+
+  
+    <div class="container">
+      
+            
+          <div  style=" height:fit-content; width: 200px;  align-items: center; margin-left: 200px;  " id="flow">
+           <div style="width:fit-content;" id="1">
+            <img src="main.png" alt="" style="width: 100px; height:50px;">
+     
+           </div>
+           <img src="down-arrow.png" alt="" id= "300" style="width: 80px; height:70px;" onclick="openPopup(this.id)">
+               
+                <div style="width:fit-content;" id="299">
+                    <img src="end.png" alt="" style="width: 100px; height:50px;">
+                </div>
+            </div>
+            <table class="display-btn" style="margin-right: 0px;  margin-top: 100px; margin-left:auto; align-items: center; ">
+
+              <th style="font-size: 22px;text-align: center;border: 2px solid;background: darkcyan;">C++ CODE</th>
+              <th style="font-size: 22px;text-align: center;border: 2px solid;background: darkcyan;">JAVA CODE</th>
+             
+              <tr>
+                <td>
+                  <textarea name="myTextBox" id="cont" cols="40" rows="10"> </textarea>
+                </td>
+                <td>
+                  <textarea name="myTextBox" id="cont1" cols="40" rows="10"> </textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <button id="convert"  onclick="display()">C++ code</button>        
+                </td>
+                <td>
+                  <button id="convert-java" onclick="displayJava()" >java code</button>        
+                 
+                </td>
+              </tr>
+            </table>
+
+            <div  class="deleteTag"  >
+              <span class="popuptext" id="myPopup">Are you sure want to delete this tag ?
+                <br>
+                <button id="confirmDelete" onclick="deleteTag(),closeDeletePopup()" > Confirm </button>
+                <button id="cancleDelete" onclick="closeDeletePopup()"> Cancle </button>
+              </span>
+            </div>
+
+           
+      
+            <div class="popup" id="popup">
+
+
+                
+              <table style="height:480px ; width: 500px; background-color: aliceblue;"> 
+                <tr>
+                    <th>Variables</th>
+                    <th>input/output</th>
+                    <th>Condition</th>
+                    <th>loop</th>
+                </tr>
+                <tr>
+                    <td> <img src="declare.png" alt="" style="width:100px; height:50px" onclick="addTag(1), closePopup()"></td>
+                    <td> <img src="input.png" alt="" style="width:100px; height:50px" onclick="addTag(3), closePopup()"></td>
+                    <td> <img src="if.png" alt="" style="width:100px; height:50px" onclick="addTag(6), closePopup()"></td>
+                    <td><img src="for.png" alt="" style="width:100px; height:50px" onclick="addTag(5), closePopup()"></td>
+                </tr>
+                <tr>
+                    <td> <img src="assign.png" alt="" style="width:100px; height:50px" onclick="addTag(2), closePopup()" ></td>
+                    <td><img src="output.png" alt="" style="width:100px; height:50px" onclick="addTag(4), closePopup()"></td>
+                </tr>
+              </table>
+              <button type="button" onclick="closePopup()">Cancle</button>
+            
+            </div>
+
+
+
+            <div class="assign_popup" id="assign_popup">
+
+                <div style="height: 200px; width:500px; background-color: lightblue; margin-top: 20px;">
+                            <img src="assign.png" alt="" style="width: 100px; height:50px;">
+
+                      <p  style="font-family:courier;"> <b>
+                        An Assignment Statement calculate an Expression and then stores the result in Variable 
+                      </b>
+                        </p>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <p> <input   style="height:20px; width:200px;" placeholder="Variable" id="variable-name">  =  <input   style="height:200px; width:200px;" placeholder="Expression" id="value-assign"> </p>
+                </div>
+               
+               <button type="button" onclick="closeAssignPopup()" style="height: 40px; width: 100px; ">ok</button>
+            </div>
+
+            <div class="declare_popup" id="declare_popup">
+              
+              <div style="height: 200px; width:500px; background-color: lightblue; margin-top: 20px;">
+                        <img src="declare.png" alt="" style="width: 100px; height:50px;">
+
+                    <p  style="font-family:courier;"> <b>
+                      An Assignment Statement calculate an Expression and then stores the result in Variable 
+                    </b>
+                      </p>
+              </div>
+              <form action="#">
+                <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Variable Name</span>
+                    <input id="variable-name-declare" type="text"  reqiured>
+                </div>
+                <div class="input-box">
+                    <span class="details">Type</span>
+                            <select name="type" id="data-type">
+                              <option value="integer">Integer</option>
+                              <option value="real">Real</option>
+                              <option value="String">String</option>
+                              <option value="boolean">Boolean</option>
+                            </select>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="array" name="array" value="array">
+                  <label  for="array"> Array?</label>
+                </div>
+                </div>
+                
+              </form>
+              <button type="button" onclick="closeDeclarePopup()" style="height: 40px; width: 100px; ">ok</button>
+  
+              </div> 
+
+
+
+
+            
+
+
+
+
+
+            <div class="input_popup" id="input_popup">
+
+                <div style="height: 200px; width:500px; background-color: lightblue; margin-top: 20px;">
+                            <img src="input.png" alt="" style="width: 100px; height:50px;">
+
+                      <p  style="font-family:courier;"> <b>
+                        An Assignment Statement calculate an Expression and then stores the result in Variable 
+                      </b>
+                        </p>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <p> <input   style="height:40px; width:500px;" placeholder="Enter a Variable name" id="variable-name-assign"></p>
+                </div> 
+               <button type="button" onclick="closeInputPopup()" style="height: 40px; width: 100px; ">ok</button>
+            </div>
+
+
+
+
+
+            <div class="output_popup" id="output_popup">
+
+                <div style="height: 200px; width:500px; background-color: lightblue; margin-top: 20px;">
+                            <img src="output.png" alt="" style="width: 100px; height:50px;">
+
+                      <p  style="font-family:courier;"> <b>
+                        An Assignment Statement calculate an Expression and then stores the result in Variable 
+                      </b>
+                        </p>
+                </div>
+
+                <div style="margin-top: 50px;">
+                     <input   style="height:230px; width:500px;" placeholder="Enter an Expression here" id="output-expression">
+                </div> 
+               <button type="button" onclick="closeOutputPopup()" style="height: 40px; width: 100px; ">ok</button>
+            </div>
+
+
+
+   <div class="for_popup" id="for_popup">
+                <img src="for.png" alt="" style="width: 100px; height:50px;">
+
+                <p  style="font-family:courier;"> <b>
+                  A for loop increments or decrements a variable through a range of values. 
+                </b>
+                  </p>
+               
+
+                <form action="#">
+                  <div class="user-details">
+                  <div class="input-box">
+                      <span class="details">Variable Name</span>
+                      <input type="text"  reqiured>
+                  </div>
+                  <div class="input-box">
+                      <span class="details">Start Value</span>
+                      <input type="text"  reqiured>
+                  </div>
+                  <div class="input-box">
+                      <span class="details">End Value</span>
+                      <input type="text"  reqiured>
+                  </div>
+                  <div class="input-box">
+                      <span class="details">Direction</span>
+                              <select name="direction" id="direction">
+                                <option value="Increment">Increment</option>
+                                <option value="Decrement">Decrement</option>
+                              </select>
+                  </div>
+                  <div class="input-box">
+                      <span class="details">Step by</span>
+                      <input type="text" reqiured>
+                  </div>
+                  </div>
+                  <div class="button">
+                    <button type="button" onclick="closeforPopup()" style="height: 40px; width: 100px; ">ok</button>
+                  </div>
+                </form>
+          </div>
+           
+
+
+
+            <div class="if_popup" id="if_popup">
+
+                <div style="height: 200px; width:500px; background-color: lightblue; margin-top: 20px;">
+                            <img src="if.png" alt="" style="width: 100px; height:50px;">
+
+                      <p  style="font-family:courier;"> <b>
+                        An Assignment Statement calculate an Expression and then stores the result in Variable 
+                      </b>
+                        </p>
+                </div>
+
+                <div style="margin-top: 50px;">
+                   <input   style="height:230px; width:500px;" placeholder="Enter a Conditional Expression here " id="condition-expression"> 
+                </div> 
+               <button type="button" onclick="closeifPopup()" style="height: 40px; width: 100px; ">ok</button>
+            </div>
+
+            
+           
+
+            
+    </div>
+
+    
+    
+    
+    
+</body>
+<script src="main.js"> </script>
+
+</html>
